@@ -1,0 +1,51 @@
+@import "color";
+
+$font-size-standard-px: 12px;
+
+$font-size-normal: 1rem;
+$font-size-large: ($font-size-normal * 1.25);
+$font-size-small: ($font-size-normal / 1.25);
+$font-size-largest: ($font-size-normal * 5);
+$font-size-h1: ($font-size-normal * 2);
+$font-size-h2: ($font-size-normal * 1.5);
+$font-size-h3: ($font-size-normal * 1.25);
+$font-size-link: $font-size-normal;
+
+// btn
+$_btn-size-base: () !default;
+$_btn-size-base: map-merge((
+        large: $font-size-large,
+        normal: $font-size-normal,
+        small: $font-size-small
+), $_btn-size-base);
+
+$_btn_sizes: () !default;
+@each $theme, $size in $_btn-size-base {
+  $_btn_sizes: map-merge((
+          #{$theme}:(
+                  font:$size,
+                  height: ($size * 2.5),
+                  round_size: ($size * 3),
+                  icon: ($size * 1.5),
+                  inner_padding: ($size * 0.75)
+          )
+  ), $_btn_sizes);
+}
+
+$font-weight-normal: normal;
+$font-weight-large: $font-weight-normal;
+$font-weight-small: $font-weight-normal;
+$font-weight-largest: $font-weight-normal;
+$font-weight-h1: bold;
+$font-weight-h2: bold;
+$font-weight-h3: bold;
+$font-weight-link: $font-weight-normal;
+
+$font-color-normal: f_theme-color("secondary-content");
+$font-color-large: $font-color-normal;
+$font-color-small: $font-color-normal;
+$font-color-largest: f_theme-color("primary-content");
+$font-color-h1: f_theme-color("primary-content");
+$font-color-h2: f_theme-color("primary-content");
+$font-color-h3: f_theme-color("primary-content");
+$font-color-link: f_theme-color("primary");

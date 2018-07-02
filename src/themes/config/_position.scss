@@ -1,0 +1,65 @@
+.absolute {
+  &-full, &-top, &-top-left, &-top-right, &-left, &-right {
+    position: absolute;
+    top: 0;
+  }
+  &-full, &-top, &-top-right, &-bottom-right, &-right {
+    position: absolute;
+    right: 0;
+  }
+  &-full, &-bottom, &-bottom-left, &-bottom-right, &-left, &-right {
+    position: absolute;
+    bottom: 0;
+  }
+  &-full, &-top, &-top-left, &-bottom-left, &-left {
+    position: absolute;
+    left: 0;
+  }
+}
+
+.fixed {
+  &-full, &-top, &-top-left, &-top-right, &-left, &-right {
+    position: fixed;
+    top: 0;
+  }
+  &-full, &-top, &-top-right, &-bottom-right, &-right {
+    position: fixed;
+    right: 0;
+  }
+  &-full, &-bottom, &-bottom-left, &-bottom-right, &-left, &-right {
+    position: fixed;
+    bottom: 0;
+  }
+  &-full, &-top, &-top-left, &-bottom-left, &-left {
+    position: fixed;
+    left: 0;
+  }
+}
+
+.relative {
+  position: relative;
+}
+
+.pull-left, .float-left {
+  float: left;
+}
+
+.pull-right, .float-right {
+  float: right;
+}
+
+.vertical {
+  &-top {
+    vertical-align: top;
+  }
+  &-middle {
+    vertical-align: middle;
+  }
+  &-bottom {
+    vertical-align: bottom;
+  }
+}
+
+.full-screen {
+  @extend .fixed-full;
+}

@@ -1,0 +1,93 @@
+$_white: #fff !default;
+$_gray-100: #f8f9fa !default;
+$_gray-200: #e9ecef !default;
+$_gray-300: #dee2e6 !default;
+$_gray-400: #ced4da !default;
+$_gray-500: #adb5bd !default;
+$_gray-600: #868e96 !default;
+$_gray-700: #495057 !default;
+$_gray-800: #343a40 !default;
+$_gray-900: #212529 !default;
+$_black: #000 !default;
+
+$_grays: () !default;
+$_grays: map-merge((
+        _100: $_gray-100,
+        _200: $_gray-200,
+        _300: $_gray-300,
+        _400: $_gray-400,
+        _500: $_gray-500,
+        _600: $_gray-600,
+        _700: $_gray-700,
+        _800: $_gray-800,
+        _900: $_gray-900
+), $_grays);
+
+$_blue: #448aff !default;
+$_red: #d04a4a !default;
+$_orange: #fe9e00 !default;
+$_green: #73d348 !default;
+$_cyan: #17a2b8 !default;
+$_gray-primary-content: #535353 !default;
+$_gray-secondary-content: #7d7d7d !default;
+$_gray-primary-placeholder: #bfbfbf !default;
+$_gray-secondary-placeholder: #e9eef2 !default;
+
+$_colors: () !default;
+$_colors: map-merge((
+        _blue: $_blue,
+        _red: $_red,
+        _orange: $_orange,
+        _green: $_green,
+        _white: $_white,
+        _gray: $_gray-600,
+        _gray-dark: $_gray-800
+), $_colors);
+
+$_theme-colors: () !default;
+$_theme-colors: map-merge((
+        primary: $_blue,
+        secondary: $_gray-primary-placeholder,
+        success: $_green,
+        info: $_cyan,
+        warning: $_orange,
+        danger: $_red,
+        primary-content: $_gray-primary-content,
+        secondary-content: $_gray-secondary-content,
+        primary-placeholder: $_gray-primary-placeholder,
+        secondary-placeholder: $_gray-secondary-placeholder
+), $_theme-colors);
+
+$_theme-color-interval: 8% !default;
+
+@function f_color($key: "_blue") {
+  @return map-get($_colors, $key);
+}
+
+@function f_theme-color($key: "primary") {
+  @return map-get($_theme-colors, $key);
+}
+
+@function f_gray($key: "_100") {
+  @return map-get($_grays, $key);
+}
+
+@function f_theme-color-level($color-name: "primary", $level: 0) {
+  $color: f_theme-color($color-name);
+  $color-base: if($level > 0, #000, #fff);
+
+  @if $level < 0 {
+    // Lighter values need a quick double negative for the Sass math to work
+    @return mix($color-base, $color, $level * -1 * $_theme-color-interval);
+  } @else {
+    @return mix($color-base, $color, $level * $_theme-color-interval);
+  }
+}
+
+$btn-dark-theme-color: f_theme-color("secondary");
+$btn-light-theme-color: f_theme-color("secondary-placeholder");
+
+$error-text: f_theme-color("danger");
+$warning-text: f_theme-color("warning");
+$info-text: f_theme-color("info");
+$success-text: f_theme-color("success");
