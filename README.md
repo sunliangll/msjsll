@@ -18,4 +18,4 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
-## 持续更新中...2
+## 持续更新中...
