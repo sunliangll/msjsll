@@ -51,6 +51,7 @@
   }
   .canvas{
     width: 100%;
+    height:18rem;
   }
   .msj-sll-content-app  table{
     width: 100%;
