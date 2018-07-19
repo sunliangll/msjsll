@@ -1,17 +1,22 @@
 <template>
   <div id="app">
-    <router-view/>
+    <keep-alive><router-view/></keep-alive>
   </div>
 </template>
 
 <script>
+  import Base from '../src/components/Base'
 export default {
   name: 'App',
+  'extends': Base,
+  data(){
+    return{}
+  }/*,
   mounted(){
-    this.browserRedirect();
+    this.browser_redirect();
   },
-  methods:{
-    browserRedirect() {
+  methods: {
+    browser_redirect() {
       let sUserAgent = navigator.userAgent.toLowerCase();
       let bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
       let bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
@@ -23,22 +28,27 @@ export default {
       let bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
       if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
         //跳转移动端页面
-        this.$router.push({ path: '/' })
+        if(this.get_cookie('route')){
+          this.$router.push({ path: this.get_cookie('route') })
+        }else{
+          this.$router.push({ path: '/' })
+        }
       } else {
         //跳转pc端页面
         this.$router.push({ path: '/pc_index' })
       }
     }
-  }
+  }*/
+
 }
 </script>
 
 <style>
-  html{color:#000;background:#FFF;}
-  body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,
-  fieldset,input,textarea,p,blockquote,th,td {
+  html{color:#000;background:#FFF;height:100%;width: 100%}
+  body{
     margin:0;
     padding:0;
+    height:100%
   }
   table {
     border-collapse:collapse;

@@ -1,5 +1,5 @@
 <template>
-    <div>pc</div>
+    <div>pc首页暂无</div>
 </template>
 
 <script>

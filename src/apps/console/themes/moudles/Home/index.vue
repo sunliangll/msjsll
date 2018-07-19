@@ -7,8 +7,8 @@
         <table>
           <tbody>
             <tr>
-              <td><img src="/static/home/icon/blogger.png"/></td>
-              <td><img src="/static/home/icon/github.png"/></td>
+              <td><router-link to="/blogger"><img src="/static/home/icon/blogger.png"/></router-link></td>
+              <td><a href="https://www.github.com/sunliangll/msjsll"><img src="/static/home/icon/github.png"/></a></td>
               <td><img src="/static/home/icon/google.png"/></td>
             </tr>
             <tr>

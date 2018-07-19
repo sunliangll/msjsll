@@ -5,16 +5,19 @@
   "author": "msjsll",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --host 0.0.0.0 --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "build": "node build/build.js"
   },
   "dependencies": {
+    "bootstrap": "^3.3.7",
+    "iview": "^2.14.3",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.3",
     "scss-loader": "0.0.1",
     "style-loader": "^0.21.0",
     "vue": "^2.5.2",
+    "vue-animate": "0.0.4",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
@@ -34,6 +37,7 @@
     "file-loader": "^1.1.4",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^2.30.1",
+    "jquery": "^1.11.3",
     "node-notifier": "^5.1.2",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "ora": "^1.2.0",
