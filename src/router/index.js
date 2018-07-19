@@ -5,6 +5,7 @@ import PC_Index from '@/apps/console/themes/moudles/Home/pc_index.vue'
 import Tool from '@/apps/console/themes/moudles/Tool/Index.vue'
 import Blogger from '@/apps/console/themes/moudles/Blogger/index.vue'
 import Admin from '@/apps/admin/themes/moudles/Index/index'
+import Login from '@/apps/admin/themes/moudles/account/login'
 
 Vue.use(Router)
 
@@ -22,6 +23,10 @@ export default new Router({
       path: '/Admin',
       name: 'admin',
       component: Admin
+    },{
+      path: '/Login',
+      name: 'login',
+      component: Login
     },{
       path: '/blogger',
       name: 'blogger',
