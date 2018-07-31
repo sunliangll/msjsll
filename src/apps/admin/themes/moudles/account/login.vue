@@ -1,9 +1,7 @@
 <template>
-  <div style="height: 100%">
-    <Row>
-      <Col span="4">col-12</Col>
+  <div :class="cssPrefix + 'admin_login_div'">
+    <Row type="flex" justify="center">
       <Col span="16" style="margin-top: 20%"><simple-login></simple-login></Col>
-      <Col span="4">col-12</Col>
     </Row>
   </div>
 </template>
@@ -18,6 +16,13 @@
     }
   }
 </script>
-<style scoped>
-
+<style lang="scss">
+  @import "../../../../../themes/config/_variables";
+  .#{$prefix}admin_login_div{
+    height: 100%;
+    background-image: url('https://file.iviewui.com/iview-admin/login_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
 </style>

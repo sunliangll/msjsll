@@ -3,7 +3,7 @@
 
   export default {
     name: "login",
-    'extends': 'Base',
+    'extends': Base,
     data() {
       return {
       }

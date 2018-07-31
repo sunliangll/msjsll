@@ -1,8 +1,9 @@
 <template>
   <div>
-    <input-validate></input-validate><br/><br/>
-    <input-validate></input-validate><br/><br/>
-    <button-validate buttonName="登录" type="primary"></button-validate>
+    <input-validate placeholder="账号" @postVal="getContent" @postState="getState"> </input-validate><br/><br/>
+    <input-validate placeholder="密码" type="password"></input-validate><br/><br/>
+    <!--<button-validate buttonName="登录" type="primary" ></button-validate>-->
+    <button type="primary"  @click="toLogin()">登录</button>
   </div>
 </template>
 

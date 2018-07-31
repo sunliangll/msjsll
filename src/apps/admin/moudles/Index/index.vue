@@ -6,7 +6,7 @@
           userInfo:''
         }
       },
-      mounted(){
+      created(){
         this.__checkAuth()
       },
       methods:{
