@@ -1,7 +1,9 @@
 <template>
   <div :class="cssPrefix + 'admin_login_div'">
-    <Row type="flex" justify="center">
-      <Col span="16" style="margin-top: 20%"><simple-login></simple-login></Col>
+    <Row type="flex" justify="end">
+      <Col span="16" style="margin-top: 20%;margin-right: 5%">
+        <simple-login></simple-login>
+      </Col>
     </Row>
   </div>
 </template>

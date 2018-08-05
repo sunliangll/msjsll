@@ -1,5 +1,5 @@
 <template>
-  <div :class="cssPrefix + 'input'">
+  <div :class="cssPrefix + 'component-input_div'">
     <input :type="type"
            :name="name"
            :placeholder="placeholder"
@@ -15,7 +15,9 @@
            @keydown.down="onInput"
            ref="inputVal"
     />
-    <span v-if="valueErrorState === true && valueErrorMsg !== ''">{{valueErrorMsg}}</span>
+<!--
+    <Alert :class="cssPrefix + 'component-input_alert'" v-if="valueErrorState === true && valueErrorMsg !== ''" type="error" show-icon>{{valueErrorMsg}}</Alert>
+-->
   </div>
 </template>
 
@@ -88,20 +90,24 @@
           }else{
             this.valueErrorMsg = '';
             this.valueErrorState = false;
-            this.$emit('postVal', value);
-            this.$emit('postState', this.valueErrorState);
+            this.$emit('setVal', value);
           }
         }
       }
     },
-    watch: {
+    watch:{
       value(){
-        this.onInput();
+        this.$emit('setVal', this.value)
       }
     }
   }
 </script>
 
-<style scoped>
-
+<style lang="scss">
+  @import "../themes/config/_variables";
+  .#{$prefix}component-input_div > input{
+    border-radius: 5px;
+    width: 100%;
+    text-align:center;
+  }
 </style>

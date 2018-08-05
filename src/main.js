@@ -6,9 +6,12 @@ import Vuex from 'vuex'
 import iView from 'iview';
 import store from '@/apps/admin/store/index';
 import 'iview/dist/styles/iview.css';
+import FastClick from 'fastclick'
+require('../mock/mock');
 Vue.use(Vuex);
 Vue.use(VueI18n);
 Vue.use(iView);
+FastClick.attach(document.body);
 const i18n = new VueI18n({
   // locale: LangStorage.getLang('zh'),  // 语言标识，后面会用做切换和将用户习惯存储到本地浏览器
   locale: 'zh', // 语言标识
