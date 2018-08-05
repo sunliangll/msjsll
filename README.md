@@ -2,7 +2,7 @@
 
 > msjsll first vue project
 
-> Demo https://www.msjsll.com
+> Demo 暂无
 ## Build Setup
 
 ``` bash
