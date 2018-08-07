@@ -1,5 +1,5 @@
 import * as types from './mutation-types';
-import * as api from '@/apps/admin/api/account.api';
+import * as api from '../../../../admin/api/account.api';
 
 const state = {
   accountInfo: false, // 当前用户信息
@@ -24,6 +24,7 @@ const actions = {
   [types.A_LOGIN]: ({state}, input) => {
     state.loginStatus = 2;
     if (state.loginType === 0) {
+      console.log(input);
       api.simpleLogin(input, ({data}) => {
         state.loginStatus = 4;
         state.accountInfo = {
