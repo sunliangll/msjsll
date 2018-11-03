@@ -18,9 +18,6 @@ const getters = {
 };
 
 const mutations = {
-  [types.M_SET_LOGIN_STATUS](data){
-    state.loginStatus = 4;
-  }
 };
 
 const actions = {
