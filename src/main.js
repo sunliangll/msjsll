@@ -6,7 +6,7 @@ import Vuex from 'vuex'
 import iView from 'iview';
 import store from '@/apps/admin/store/index';
 import 'iview/dist/styles/iview.css';
-import FastClick from 'fastclick'
+import FastClick from 'fastclick';
 require('../mock/mock');
 Vue.use(Vuex);
 Vue.use(VueI18n);

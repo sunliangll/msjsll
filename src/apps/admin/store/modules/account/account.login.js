@@ -5,26 +5,28 @@ const state = {
   accountInfo: false, // 当前用户信息
   loginType: 0, // 0-通过密码登录、1-通过短信验证码登录
   loginStatus: 0, // 0-获取当前用户登录信息、1-等待用户输入、2-登录中、3-登录失败、4-登录成功
-  loginFailureMsg: 'fasd'//, // 登录失败信息
+  loginFailureMsg: '未知错误'//, // 登录失败信息
 };
 
 const getters = {
   loginType: state => state.loginType,
   loginStatus: state => state.loginStatus,
+  loginFailureMsg: state => state.loginFailureMsg,
   accountUsername: state => state.accountInfo ? state.accountInfo['username'] : false,
   accountMobile: state => state.accountInfo ? state.accountInfo['mobile'] : false,
   accountEmail: state => state.accountInfo ? state.accountInfo['email'] : false,
 };
 
 const mutations = {
-  [types.M_LOGIN_VIA_PASSWORD]: state => state.loginType = 0,
+  [types.M_SET_LOGIN_STATUS](data){
+    state.loginStatus = 4;
+  }
 };
 
 const actions = {
   [types.A_LOGIN]: ({state}, input) => {
     state.loginStatus = 2;
     if (state.loginType === 0) {
-      console.log(input);
       api.simpleLogin(input, ({data}) => {
         state.loginStatus = 4;
         state.accountInfo = {
